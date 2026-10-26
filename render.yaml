@@ -1,0 +1,17 @@
+services:
+  - type: web
+    runtime: node
+    name: ai-assessment-generator
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NITRO_PRESET
+        value: render-com
+      - key: HOST
+        value: 0.0.0.0
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai/
+      - key: AI_MODEL
+        value: gemini-3.8-flash
